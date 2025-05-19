@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    /* background: linear-gradient(45deg, rgba(173, 216, 230, 0.9) 5%, rgba(144, 238, 144, 0.9) 95%); */
+    /* background: linear-gradient(150deg, rgba(173, 216, 230, 0.9) -12.5%, rgba(156, 244, 156, 0.9) 200%); */
+    /* background: linear-gradient(150deg, rgba(173, 216, 230, 0.9) -12.5%, rgba(156, 244, 156, 0.9) 200%); */
+  background: url('assets/letters.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+.grid-1 {
+  grid-row: span 1;
+  overflow: hidden;
+}
+
+.grid-2 {
+  grid-row: span 2;
+  overflow: hidden;
+}
+
+.grid-3 {
+  grid-row: span 3;
+  overflow: hidden;
+}
+
+.grid-4 {
+  grid-row: span 4;
+  overflow: hidden;
+}
