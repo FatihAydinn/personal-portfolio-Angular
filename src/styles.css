@@ -26,3 +26,14 @@ body{
   grid-row: span 4;
   overflow: hidden;
 }
+
+.grid-5 {
+  grid-row: span 5;
+  overflow: hidden;
+}
+
+.sidebarbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
