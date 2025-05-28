@@ -1,0 +1,12 @@
+<div class="card text-center bg-dark text-light text-center" style="height: 20rem; width:7.5%; position: absolute; left:-8%">
+    <div class="p-0 card-body" style="display: grid; overflow: hidden; border-radius: 11px; cursor:pointer; user-select: none;" *ngFor="let item of sidebaritems">
+        <ng-container>
+            <div class="sidebarbtn grid-1" [style.borderBottom] = "item === sidebaritems[sidebaritems.length-1] ? 'none' : '#4d4b4b solid 1px'">
+                <div style="display:grid; font-size: smaller; font-family: monospace;">
+                    <i class="grid-1 bi bi-{{ item.icon }}" style="font-size: larger;"></i>
+                    <i class="grid-1">{{ item.name }}</i>
+                </div>
+            </div>
+        </ng-container>     
+    </div>
+</div>
