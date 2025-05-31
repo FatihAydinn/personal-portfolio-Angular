@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -26,5 +27,13 @@ export class SidebarComponent {
         if (element)
           element.style.setProperty('background-color', 'transparent', 'important');
       }
+    }
+    
+    // @Output() hideRequested = new EventEmitter<void>();
+    constructor(private sharedService: SharedService) {}
+
+    onButtonClick() {
+      this.sharedService.requestHide();
+      // this.sharedService.emit();
     }
 }

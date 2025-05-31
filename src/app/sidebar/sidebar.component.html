@@ -1,7 +1,7 @@
 <div class="card text-center bg-dark text-light text-center" style="height: 20rem; width:7.5%; position: absolute; left:-8%">
     <div class="p-0 card-body" style="display: grid; overflow: hidden; border-radius: 11px; cursor:pointer; user-select: none;" *ngFor="let item of sidebaritems"
     [ngStyle]="{'background-color': clickedItem === item.val ? '#5a5a5a7a' : 'transparent'}"
-    (click)="handleClick(item.val)" id="sidebarbtn">
+    (click)="handleClick(item.val)" (click)="onButtonClick()" id="sidebarbtn">
         <ng-container>
             <div id="sidebarbtn{{item.val}}" class="sidebarbtn grid-1" [style.borderBottom] = "item === sidebaritems[sidebaritems.length-1] ? 'none' : '#4d4b4b solid 1px'" 
             [style.backgroundColor] = "item === sidebaritems[0] ? '#5a5a5a7a' : 'transparent' ">
