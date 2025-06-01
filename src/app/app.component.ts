@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -14,9 +14,4 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'portfolio-app';
   test = 'yes be yes';
-
-
-  hideTarget() {
-    
-  }
 }

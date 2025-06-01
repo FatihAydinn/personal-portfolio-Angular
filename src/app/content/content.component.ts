@@ -1,5 +1,5 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ViewChild, ViewChildren, QueryList, OnDestroy, ElementRef, AfterViewInit } from '@angular/core';
+import { CommonModule, NgFor } from '@angular/common';
 import { SharedService } from '../shared.service';
 import { Subscription } from 'rxjs';
 
@@ -9,26 +9,26 @@ import { Subscription } from 'rxjs';
   templateUrl: './content.component.html',
   styleUrl: './content.component.css'
 })
-export class ContentComponent {
-  // @ViewChild('myTarget') targetElement!: ElementRef;
+export class ContentComponent implements AfterViewInit, OnDestroy {
 
-  @ViewChild('target') targetRef!: ElementRef;
+  @ViewChildren('target') targetRefs!: QueryList<ElementRef>;
+
   private subscription!: Subscription;
   constructor(private sharedService: SharedService) {}
 
   ngAfterViewInit() {
-    this.subscription = this.sharedService.hideTarget$.subscribe(() => {
-      this.targetRef.nativeElement.style.display = 'none';
+    this.subscription = this.sharedService.hideTarget$.subscribe((val: number) => {
+      const targetArray = this.targetRefs.toArray();
+      
+      for (let i = 0; i < targetArray.length; i++) {
+        targetArray[i].nativeElement.style.display = 'none';
+      }
+      targetArray[val].nativeElement.style.display = 'block';
+
     });
   }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
-  //idVisible: boolean = true;
-//
-  //hideTarget() {
-  //  this.idVisible = !this.idVisible;
-  //}
 }

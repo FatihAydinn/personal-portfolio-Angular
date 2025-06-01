@@ -6,10 +6,12 @@ import { Subject } from 'rxjs';
 })
 
 export class SharedService {
-  private hideTargetSubject = new Subject<void>();
+  private hideTargetSubject = new Subject<number>();
   hideTarget$ = this.hideTargetSubject.asObservable();
+  
+  val: number = 1;
 
-  requestHide() {
-    this.hideTargetSubject.next();
+  requestHide(val: number) {
+    this.hideTargetSubject.next(val);
   }
 }
