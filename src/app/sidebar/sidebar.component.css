@@ -1,0 +1,13 @@
+.sidebarcardresp {
+  display: none !important;
+}
+
+/* responsive content */
+@media (max-width: 768px) {
+  .sidebarcard {
+    display: none;
+  }
+    .sidebarcardresp {
+    display: block !important;
+  }
+}

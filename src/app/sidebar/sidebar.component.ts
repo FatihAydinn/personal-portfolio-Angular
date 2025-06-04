@@ -10,11 +10,11 @@ import { SharedService } from '../shared.service';
 })
 export class SidebarComponent {
   sidebaritems : { name: string; icon: string, val: number } [] = [
-      {name: "ABOUT", icon: "person-fill", val: 0 },
-      {name: "RESUME", icon: "file-earmark-text", val: 1 },
-      {name: "WORK", icon: "code-slash", val: 2 },
-      {name: "CONTACT", icon: "envelope", val: 3 },
-      {name: "BLOG", icon: "substack", val: 4 }
+    {name: "ABOUT", icon: "person-fill", val: 0 },
+    {name: "WORK", icon: "code-slash", val: 1 },
+    {name: "SKILLS", icon: "pen", val: 2 },
+    {name: "RESUME", icon: "file-earmark-text", val: 3 },
+    {name: "CONTACT", icon: "envelope", val: 4 }
     ];
 
     clickedItem: number = 0;
