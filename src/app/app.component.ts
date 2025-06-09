@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
+import { GithubapiComponent } from './githubapi/githubapi.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, SidebarComponent, ContentComponent, CommonModule],
+  imports: [RouterOutlet, FormsModule, SidebarComponent, ContentComponent, GithubapiComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -30,6 +30,19 @@
   transition: 0.2s;
 }
 
+.mycard::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mycard::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.4);
+  border-radius: 6px;
+}
+
+.mycard::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 /* responsive content */
 @media (max-width: 768px) {
   .card {
