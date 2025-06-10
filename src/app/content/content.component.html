@@ -1,4 +1,4 @@
-<div #target class="card1 bg-dark text-light">
+<div #target class="card1 bg-dark text-light" style="display: none;">
     <div class="py-0 mycard card-body" style="height: 33rem; max-height: 600px; overflow-y: auto;">
         <div class="grid-1 mt-3" style="border-bottom: 0.1rem solid #373434;"><h6>About Me</h6></div>
         <div class="row">
@@ -25,26 +25,39 @@
         </div>
     </div>
 </div>
-<div #target class="card1 bg-dark text-light" style="display: none;">
+<div #target class="card1 bg-dark text-light">
     <div class="py-0 mycard card-body" style="grid-template-rows: repeat(10, 50px); height: 33rem; max-height: 600px; overflow-y: auto;">
         <div class="mt-3 mb-3" style="border-bottom: 0.1rem solid #373434;"><h6>Work / Projects</h6></div>
         <!-- <div class="grid-1 mt-3" style="border-bottom: 0.1rem solid #373434;"><h6>About Me</h6></div> -->
-
+        <h6 class="m-25 text-center" style="color: lightslategrey;">Professional Experiences</h6>
+        <hr style="width: 25%;margin: auto;color: #565558;">
+        <div class="my-2">
+            <div class="mb-2 d-flex justify-content-between w-100">
+              <span style="color: darkgrey;">alkapida.com</span>
+              <strong style="font-size: x-small; margin-top: 1%;">09.2023 / Present</strong>
+            </div>
+            <div style="padding-left: 2%;" class="mb-4" *ngFor="let item of experienceitems">
+                <h6 class="m-0">{{item.title}}</h6>
+                <span style="padding-left: 2%; font-family: math; color: thistle">{{item.description}}</span>
+                <strong style="font-size: x-small;" class="d-flex justify-content-end">{{item.technologies}}</strong>
+            </div>
+        </div>            
         <h6 class="m-25 text-center" style="color: lightslategrey;">GitHub Projects</h6>
         <hr style="width: 25%;margin: auto;color: #565558;">
         <div class="row mt-3">
-            <div class="col-6" *ngFor="let item of array">
-                <div role="alert" class="alert alert-info text-light" style="background-color: #14171d; display: grid; grid-template-rows: repeat(5, 20px); padding: 5px 10px;"> 
+            <div class="col-6" *ngFor="let item of array; let i = index">
+                <div role="alert" class="alert alert-info text-light" style="cursor: pointer; background-color: #14171d; display: grid; grid-template-rows: repeat(5, 20px); padding: 5px 10px;"> 
                     <div class="grid-1" style="font-family: monospace;">
                          <a href="{{item.clone_url}}" target="_blank" style="text-decoration: none; color: #69d202db;">{{ item.name }}</a>
                     </div>
-                    <div class="grid-4 text-secondary" style="margin: 3px 0 0 1.5%;">
+                    <div (click)="clickedrepo(item, i)" class="grid-4 text-secondary" style="margin: 3px 0 0 1.5%;">
                         <span style="font-size: small">
                             <p>{{ item.description }}</p>
                         </span>
                     </div>
                 </div>
-            </div>        
+            </div>  
+            <a href="https:github.com/FatihAydinn?tab=repositories" target="_blank" class="mb-4 mt-2 text-center" style="color: #69d202db; font-family: monospace;">Click for more!</a>      
         </div>
     </div>    
 </div>    

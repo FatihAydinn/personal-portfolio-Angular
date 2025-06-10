@@ -21,8 +21,7 @@ export class GithubapiComponent implements OnInit {
     const url = `https://api.github.com/users/${username}/repos?sort=created&direction=desc`;
 
     this.http.get<any[]>(url).subscribe(data => {
-      this.repositories = data.slice(0, 6); 
-      console.log(this.repositories);
+      this.repositories = data.slice(0, 4); 
       this.sharedData.setArray(this.repositories);
     });
   }
