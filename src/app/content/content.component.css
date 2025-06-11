@@ -43,6 +43,12 @@
   background: transparent;
 }
 
+.full-height-card {
+  grid-template-rows: repeat(10, 50px); 
+  height: 33rem; 
+  overflow-y: auto;        
+}
+
 /* responsive content */
 @media (max-width: 768px) {
   .card {
@@ -62,6 +68,31 @@
   .btn {
     padding: 0.3rem 0.6rem; 
     font-size: 0.9rem; 
+  }
+  .mycard::after {
+    content: "";
+    background-color: #ffffff00;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 20px;
+    left: 20px;
+    transition: 0.2s;
+  }
+
+  .full-height-card {
+    height: 90vh;         
+    overflow-y: auto;      
+    /*padding: 0;
+    margin: 0; */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 }
 

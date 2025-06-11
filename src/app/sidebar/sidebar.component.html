@@ -1,9 +1,9 @@
 <div class="card sidebarcardresp bg-dark text-light" style="display: grid;">
-    <div class="row text-center" style="height: 3.5rem;">
+    <div class="row text-center" style="height: 4rem; padding-top: 5px;">
         <div class="col-1 grid"></div>
-        <div *ngFor="let item of sidebaritems" (click)="handleClick(item.val)" (click)="onButtonClick()" id="sidebarbtn" class="col-2">
+        <div *ngFor="let item of sidebaritems" (click)="handleClick(item.val)" (click)="onButtonClick()" id="sidebarbtn" class="col-2 px-0">
             <i class="grid-1 bi bi-{{ item.icon }}" style="font-size: large;"></i>
-            <i class="grid-1" style="font-size: x-small;">{{ item.name }}</i>
+            <p class="grid-1 mt-1" style="font-size: x-small;">{{ item.name }}</p>
         </div>
         <div class="col-1"></div>
     </div>

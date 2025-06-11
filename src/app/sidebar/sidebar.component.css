@@ -10,4 +10,11 @@
     .sidebarcardresp {
     display: block !important;
   }
+
+  .cardposition {
+    position: fixed;
+    top: 1%;
+    left: 4.3%;
+    width: 92%;
+  }
 }
