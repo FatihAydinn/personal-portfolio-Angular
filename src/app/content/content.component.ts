@@ -3,6 +3,7 @@ import { CommonModule, NgFor } from '@angular/common';
 import { SharedService } from '../shared.service';
 import { Subscription } from 'rxjs';
 import { SharedDataService } from '../shared-data.service';
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-content',
@@ -52,4 +53,21 @@ export class ContentComponent implements AfterViewInit, OnDestroy, OnInit {
     clickedrepo (repo: any, id: number): void{
       window.open(this.array[id].clone_url, '_blank');
     }
+
+    certfImg(resimUrl: string) {
+      const modalIcerikAlani = document.getElementById('modalbody');
+      const certModalElement = document.getElementById('certModal');
+      if (modalIcerikAlani && certModalElement) {
+        modalIcerikAlani.innerHTML = `<img src="${resimUrl}" class="img-fluid" alt="Sertifika Detayı" style="height: 25rem; width: 100%; border-radius: 10px;">`;
+        const modal = new (window as any).bootstrap.Modal(certModalElement);
+        modal.show();
+      }
+    }
+
+    // certfImg(){
+    //     const modalElement = document.getElementById('certModal');
+    //     console.log(modalElement);
+    //     const modal = new bootstrap.Modal(modalElement);
+    //     modal.show();
+    // }
 }
