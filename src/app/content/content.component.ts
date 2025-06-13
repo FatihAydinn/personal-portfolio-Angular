@@ -26,6 +26,12 @@ export class ContentComponent implements AfterViewInit, OnDestroy, OnInit {
     {title: "E-Commerce API Integration System", description: "Combines multiple e-commerce platforms (Trendyol, N11, Pazarama) into a unified system. Streamlines product uploads, updates, deletions, and order tracking with a single operation.", technologies: ".NET Core, Web API"}
   ]
 
+  educationitems : { title: string, program: string, description: string, dates: string } [] = [
+    {title: "Kastamonu University", program: "Associate Degree, Computer Programming", description: "Studied Computer Programming with a focus on software fundamentals and development. Gained hands-on experience in C, C#, and ASP.NET, building a strong foundation in web technologies and backend systems.", dates: "September 2019 - June 2021"},
+    {title: "Infotech Academy", program: "Software Development Expertise-MCSD", description: "Completed a Software Expertise course focused on full-stack development, including C# OOP, ASP.NET Core, Web API, and Microservices, with hands-on training in both Code First and DB First approaches using Entity Framework.", dates: "November 2022 - May 2023"},
+    {title: "Techcareer.net", program: "Bootcamp", description: "The bootcamp provided training in ASP.NET Core MVC for building web applications. It included practice with databases and using the MVC model. A project was developed at the end and presented to a senior instructor.", dates: "August 2023 - September 2023"}
+  ]
+
   private subscription!: Subscription;
   constructor(private sharedService: SharedService, private sharedData: SharedDataService) {}
   
