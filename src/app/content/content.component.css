@@ -8,6 +8,11 @@
   margin-right: auto;
 }
 
+.certimgsize {
+  width: 275px;
+  height: 100px;
+}
+
 .mycard
 {
   width: 90vw; 
@@ -93,6 +98,11 @@
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
+  }
+
+  .certimgsize {
+    width: 150px;
+    height: 100px;
   }
 }
 
