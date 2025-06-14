@@ -32,6 +32,20 @@ export class ContentComponent implements AfterViewInit, OnDestroy, OnInit {
     {title: "Techcareer.net", program: "Bootcamp", description: "The bootcamp provided training in ASP.NET Core MVC for building web applications. It included practice with databases and using the MVC model. A project was developed at the end and presented to a senior instructor.", dates: "August 2023 - September 2023"}
   ]
 
+  stack: {title: string, skill: string[]} [] = [
+    {title: "Languages & Fundamentals", skill: ["C#","JavaScript","TypeScript", "OOP"]},
+    {title: "Frameworks & Architectures", skill: ["WinForms", "MVC", "N-Layer Architecture", "Onion Architecture", "Microservices"]},
+    {title: "Backend & API Development", skill: ["ASP.NET Core", "Entity Framework", "Identity"]},
+    {title: "Frontend & UI", skill: ["HTML", "CSS", "Angular", "jQuery", "Bootstrap"]},
+    {title: "Principles & Patterns", skill: ["SOLID", "Dependency Injection (DI)", "Repository Pattern"]},
+    {title: "Databases & Data Management", skill: ["SQL Server", "MongoDB", "Redis"]},
+    {title: "Integrations & Specializations", skill: ["RFID Integration", "E-commerce API Integrations"]},
+    {title: "Testing ", skill: ["Postman", "Swagger"]},
+    {title: "Version Control", skill: ["Git", "GitHub"]},
+    {title: "Soft Skills", skill: ["Problem Solving", "Self-Discipline", "Teamwork & Collaboration", "Continuous Learning", "Self-motivated"]},
+    {title: "Language Proficiency", skill: ["Turkish – Native" , "English – Upper-Intermediate"]},
+  ]
+
   private subscription!: Subscription;
   constructor(private sharedService: SharedService, private sharedData: SharedDataService) {}
   
