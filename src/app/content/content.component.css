@@ -13,6 +13,22 @@
   height: 100px;
 }
 
+.certfbrand {
+  font-size: x-small;
+  color: darkgray;
+}
+
+.certfdesc {
+  font-size: smaller; 
+  margin-left: 15px;
+}
+
+.certflinkicon {
+  margin-top: 7.5%; 
+  font-size: smaller; 
+  color: darkgray;
+}
+
 .mycard
 {
   width: 90vw; 
@@ -102,8 +118,34 @@
   }
 
   .certimgsize {
-    width: 150px;
+    width: 100px;
     height: 100px;
+  }
+  
+  .certftitle {
+    font-size: 11px;
+  }
+
+  .certfbrand {
+    font-size: 8px;
+    color: darkgray;
+    margin-right: 6px;
+  }
+
+  .certfdesc {
+    font-size: 9px;
+    margin-left: 1%;
+  }
+
+  .certflinkicon {
+    margin-top: 28.5%;
+    font-size: x-small;
+    color: darkgray;
+    margin-right: 3%;
+  }
+  
+  .certfcontent {
+    padding: 0;
   }
 }
 
