@@ -46,6 +46,12 @@ export class ContentComponent implements AfterViewInit, OnDestroy, OnInit {
     {title: "Language Proficiency", skill: ["Turkish – Native" , "English – Upper-Intermediate"]},
   ]
 
+  certificates: {title: string, company: string, description: string, imgurl: string, link: string } [] = [
+    {title: "Backend Development with .Net Core", company: "Microsoft", description: "Focused on backend development with .NET Core, the course covered key principles for building robust and maintainable systems. It refined my abilities in creating RESTful APIs, managing data effectively, and implementing secure middleware pipelines.", imgurl: "/certificates/certf1.jpg", link: "www.coursera.org/account/accomplishments/records/FJ16052QVIQU"},
+    {title: "Software Specialization Course - MCSD", company: "Infotech Academy", description: "This program offered comprehensive training in modern software development practices, including backend and frontend technologies, project structuring, and essential programming concepts. It equipped me with practical skills to develop scalable and maintainable applications.", imgurl: "/certificates/certf2.jpg", link: "https://www.linkedin.com/feed/update/urn:li:activity:7087064046780215296/"},
+    {title: "ASP.Net MVC Bootcamp", company: "Techcareer", description: "Gaining hands-on experience in ASP.NET MVC, the training offered practical insight into web application development using the MVC pattern. It strengthened my understanding of routing, controller actions, and structured application design within the .NET framework.", imgurl: "/certificates/certf3.png", link: "https://certificates.techcareer.net/tr/verify/52061439390497"}
+  ]
+
   private subscription!: Subscription;
   constructor(private sharedService: SharedService, private sharedData: SharedDataService) {}
   
@@ -74,11 +80,11 @@ export class ContentComponent implements AfterViewInit, OnDestroy, OnInit {
       window.open(this.array[id].clone_url, '_blank');
     }
 
-    certfImg(resimUrl: string) {
-      const modalIcerikAlani = document.getElementById('modalbody');
+    certfImg(imgmUrl: string) {
+      const modalcontent = document.getElementById('modalbody');
       const certModalElement = document.getElementById('certModal');
-      if (modalIcerikAlani && certModalElement) {
-        modalIcerikAlani.innerHTML = `<img src="${resimUrl}" class="img-fluid" alt="Sertifika Detayı" style="height: 25rem; width: 100%; border-radius: 10px;">`;
+      if (modalcontent && certModalElement) {
+        modalcontent.innerHTML = `<img src="${imgmUrl}" class="img-fluid" style="height: 25rem; width: 100%; border-radius: 10px;">`;
         const modal = new (window as any).bootstrap.Modal(certModalElement);
         modal.show();
       }
