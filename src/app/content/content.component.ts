@@ -53,18 +53,59 @@ export class ContentComponent implements AfterViewInit, OnDestroy, OnInit {
   ]
 
   private subscription!: Subscription;
+  private currentIndex = 0;
   constructor(private sharedService: SharedService, private sharedData: SharedDataService) {}
-  
-    ngAfterViewInit() {
-      this.subscription = this.sharedService.hideTarget$.subscribe((val: number) => {
-        const targetArray = this.targetRefs.toArray();
 
-        for (let i = 0; i < targetArray.length; i++) {
-          targetArray[i].nativeElement.style.display = 'none';
-        }
-        targetArray[val].nativeElement.style.display = 'block';
-      });
-    }
+  ngAfterViewInit() {
+    this.subscription = this.sharedService.hideTarget$.subscribe((newIndex: number) => {
+      if (newIndex === this.currentIndex) {
+        return;
+      }
+      
+      const targetArray = this.targetRefs.toArray();
+      const currentPage = targetArray[this.currentIndex].nativeElement;
+      const nextPage = targetArray[newIndex].nativeElement;
+
+      const currentMyCard = currentPage.querySelector('.mycard');
+      const nextMyCard = nextPage.querySelector('.mycard');
+
+      if (currentMyCard) {
+        currentMyCard.classList.remove('shadow-visible');
+      }
+
+      setTimeout(() => {
+        
+        currentPage.classList.remove('active');
+        nextPage.classList.add('active');
+        this.currentIndex = newIndex;
+
+        setTimeout(() => {
+          
+          setTimeout(() => {
+            
+            if (nextMyCard) {
+              nextMyCard.classList.add('shadow-visible');
+            }
+
+          }, 250);
+
+        }, 250); 
+
+      }, 350); 
+
+    });
+  }
+
+    // ngAfterViewInit() {
+    //   this.subscription = this.sharedService.hideTarget$.subscribe((val: number) => {
+    //     const targetArray = this.targetRefs.toArray();
+
+    //     for (let i = 0; i < targetArray.length; i++) {
+    //       targetArray[i].nativeElement.style.display = 'none';
+    //     }
+    //     targetArray[val].nativeElement.style.display = 'block';
+    //   });
+    // }
 
     ngOnInit() {
       this.sharedData.array$.subscribe(value => {
