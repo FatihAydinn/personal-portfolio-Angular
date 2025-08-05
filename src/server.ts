@@ -4,6 +4,7 @@ import {
   isMainModule,
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
+import { AngularAppEngine, createRequestHandler } from '@angular/ssr';
 import { getContext } from '@netlify/angular-runtime/context.mjs';
 import express from 'express';
 import { dirname, resolve } from 'node:path';
@@ -14,6 +15,14 @@ const browserDistFolder = resolve(serverDistFolder, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+
+const angularAppEngine = new AngularAppEngine();
+
+export async function netlifyAppEngineHandler(request: Request): Promise<Response> {
+  const context = getContext();
+  const result = await angularAppEngine.handle(request, context);
+  return result || new Response('Page not found.', { status: 404 });
+}
 
 /**
  * Example Express Rest API endpoints can be defined here.
