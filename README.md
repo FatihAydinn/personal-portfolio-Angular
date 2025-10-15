@@ -8,4 +8,4 @@ Explore my projects, skills, and experience in web development.
 - TypeScript  
 - RxJS  
 
-fatihaydin.dev
+[fatihaydin.dev](https://fatihaydin.dev/)
