@@ -7,3 +7,5 @@ Explore my projects, skills, and experience in web development.
 - Angular  
 - TypeScript  
 - RxJS  
+
+[fatihaydin.dev](https://fatihaydin.dev/)
