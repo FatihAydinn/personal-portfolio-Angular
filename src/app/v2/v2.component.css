@@ -21,7 +21,6 @@ body {
     overflow-x: hidden;
     padding: 2%;
 }
-/* Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -79,7 +78,6 @@ body {
     margin: 5px 0;
     transition: all 0.3s;
 }
-/* Mobile Sidebar */
 .mobile-sidebar {
     position: fixed;
     top: var(--nav-height);
@@ -122,7 +120,6 @@ body {
     background-color: rgba(105, 210, 2, 0.1);
     color: var(--accent);
 }
-/* Modal for certificates */
 .modal {
     display: none;
     position: fixed;
@@ -164,13 +161,9 @@ body {
     align-items: center;
     justify-content: center;
 }
-/* Sections */
 section {
-    /* min-height: 100vh; */
     padding: var(--section-padding);
-    /* max-width: var(--max-width); */
     margin: 0 auto;
-    /* opacity: 0; */
     transform: translateY(20px);
     transition: opacity 0.6s, transform 0.6s;
 }
@@ -215,7 +208,6 @@ section.visible {
     background-color: var(--accent);
     color: var(--background);
 }
-/* About Section */
 .about-content {
     display: grid;
     gap: 20px;
@@ -225,7 +217,6 @@ section.visible {
     font-size: 1.1rem;
     margin-bottom: 15px;
 }
-/* Work Section */
 .work-container {
     display: grid;
     gap: 40px;
@@ -322,7 +313,6 @@ section.visible {
     color: var(--secondary-text);
     margin-bottom: 15px;
 }
-/* Skills Section */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -353,7 +343,6 @@ section.visible {
     background-color: rgba(105, 210, 2, 0.3);
     transform: translateY(-2px);
 }
-/* Resume Section */
 .resume-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -451,7 +440,6 @@ section.visible {
     align-items: center;
     gap: 5px;
 }
-/* Contact Section */
 .contact-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -511,7 +499,6 @@ section.visible {
 .copied-message.show {
     opacity: 1;
 }
-/* Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -519,7 +506,6 @@ footer {
     font-size: 0.9rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* Responsive */
 @media (max-width: 1024px) {
     .skills-container {
         grid-template-columns: repeat(3, 1fr);
@@ -562,7 +548,6 @@ footer {
         font-size: 2rem;
     }
 }
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
