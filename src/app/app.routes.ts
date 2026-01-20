@@ -5,7 +5,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { V1Component } from './v1/v1.component';
 
 export const routes: Routes = [
-    { path: '', component: V1Component },
+    { path: '', component: V2Component },
     { path: 'v1', component: V1Component },
     { path: 'v2', component: V2Component }
     // { path: '', redirectTo: 'v2', pathMatch:'full' }

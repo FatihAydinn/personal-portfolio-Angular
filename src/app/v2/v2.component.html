@@ -1,1 +1,539 @@
-<p>v2 works!</p>
+<nav class="navbar">
+    <div class="navbar-logo">CodeCanvas</div>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="navbar-links">
+        <a href="#about" class="navbar-link">About</a>
+        <a href="#work" class="navbar-link">Work</a>
+        <a href="#skills" class="navbar-link">Skills</a>
+        <a href="#resume" class="navbar-link">Resume</a>
+        <a href="#contact" class="navbar-link">Contact</a>
+    </div>
+</nav>
+<!-- Mobile Sidebar -->
+<div class="mobile-sidebar">
+    <div class="sidebar-category">
+        <h3 class="sidebar-category-title">Navigation</h3>
+        <div class="sidebar-links">
+            <a href="#about" class="sidebar-link">About</a>
+            <a href="#work" class="sidebar-link">Work</a>
+            <a href="#skills" class="sidebar-link">Skills</a>
+            <a href="#resume" class="sidebar-link">Resume</a>
+            <a href="#contact" class="sidebar-link">Contact</a>
+        </div>
+    </div>
+    <div class="sidebar-category">
+        <h3 class="sidebar-category-title">Categories</h3>
+        <div class="sidebar-links">
+            <a href="#work" class="sidebar-link">Experience</a>
+            <a href="#work" class="sidebar-link">Projects</a>
+            <a href="#skills" class="sidebar-link">Technologies</a>
+            <a href="#resume" class="sidebar-link">Education</a>
+            <a href="#resume" class="sidebar-link">Certificates</a>
+        </div>
+    </div>
+</div>
+<!-- Certificate Modal -->
+<div class="modal" id="certificate-modal">
+    <button class="modal-close" id="modal-close">&times;</button>
+    <div class="modal-content">
+        <img class="modal-image" id="modal-image" src="" alt="Enlarged Certificate">
+    </div>
+</div>
+<!-- About Section -->
+<section id="about" class="section-about">
+        <div class="section-header">
+            <h2 class="section-title">About Me</h2>
+            <a href="#" class="btn">Download CV</a>
+        </div>
+        <div class="about-content">
+            <p class="about-text">
+                Hello! I'm a passionate full-stack developer with over 5 years of experience building web applications. 
+                My journey in tech began when I built my first website at 15, and I've been hooked ever since. 
+                I specialize in creating efficient, scalable solutions that deliver exceptional user experiences.
+            </p>
+            <p class="about-text">
+                My approach combines technical expertise with creative problem-solving. I believe that great 
+                software should not only function flawlessly but also delight users with intuitive interfaces 
+                and thoughtful interactions. This philosophy guides every project I undertake.
+            </p>
+            <p class="about-text">
+                When I'm not coding, you can find me contributing to open-source projects, mentoring junior 
+                developers, or exploring new technologies. I'm particularly interested in the intersection 
+                of design and development, where functionality meets aesthetics.
+            </p>
+            <p class="about-text">
+                I thrive in collaborative environments where I can both share my knowledge and learn from 
+                others. My goal is to continuously grow as a developer while creating meaningful digital 
+                experiences that make a difference.
+            </p>
+        </div>
+</section>
+<!-- Work Section -->
+<section id="work" class="section-work">
+        <div class="section-header">
+            <h2 class="section-title">Work Experience</h2>
+        </div>
+        <div class="work-container">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Senior Full-Stack Developer</h3>
+                        <span class="timeline-date">2021 - Present</span>
+                    </div>
+                    <p class="timeline-description">
+                        Led the development of a SaaS platform serving over 50,000 users. Architected the microservices 
+                        infrastructure and implemented CI/CD pipelines that reduced deployment times by 70%.
+                    </p>
+                    <div class="timeline-tags">
+                        <span class="tag">C#</span>
+                        <span class="tag">.NET Core</span>
+                        <span class="tag">Angular</span>
+                        <span class="tag">Azure</span>
+                        <span class="tag">Docker</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Junior Developer</h3>
+                        <span class="timeline-date">2017 - 2019</span>
+                    </div>
+                    <p class="timeline-description">
+                        Built and maintained internal tools for a marketing agency. Automated repetitive tasks 
+                        that saved the team over 20 hours per week. Collaborated with designers to implement 
+                        pixel-perfect interfaces.
+                    </p>
+                    <div class="timeline-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">WordPress</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 80px;">
+            <h2 class="section-title">GitHub Projects</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3 class="project-title"><a href="#" target="_blank">E-Commerce Platform</a></h3>
+                <p class="project-description">
+                    A full-featured e-commerce solution with inventory management, payment processing, 
+                    and analytics dashboard.
+                </p>
+                <div class="timeline-tags">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">React</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">Stripe API</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3 class="project-title"><a href="#" target="_blank">Task Management App</a></h3>
+                <p class="project-description">
+                    Productivity application with real-time collaboration features, calendar integration, 
+                    and customizable workflows.
+                </p>
+                <div class="timeline-tags">
+                    <span class="tag">Angular</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">RxJS</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3 class="project-title"><a href="#" target="_blank">API Gateway</a></h3>
+                <p class="project-description">
+                    Microservices gateway with authentication, rate limiting, and request transformation 
+                    capabilities.
+                </p>
+                <div class="timeline-tags">
+                    <span class="tag">.NET Core</span>
+                    <span class="tag">Ocelot</span>
+                    <span class="tag">JWT</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3 class="project-title"><a href="#" target="_blank">Portfolio Template</a></h3>
+                <p class="project-description">
+                    Open-source portfolio template for developers with dark/light mode, responsive design, 
+                    and easy customization.
+                </p>
+                <div class="timeline-tags">
+                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">GSAP</span>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="section-skills">
+        <div class="section-header">
+            <h2 class="section-title">Skills</h2>
+        </div>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3 class="category-title">Languages & Fundamentals</h3>
+                <div>
+                    <span class="skill-bubble">JavaScript</span>
+                    <span class="skill-bubble">TypeScript</span>
+                    <span class="skill-bubble">C#</span>
+                    <span class="skill-bubble">Python</span>
+                    <span class="skill-bubble">HTML5</span>
+                    <span class="skill-bubble">CSS3</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="category-title">Frameworks & Architectures</h3>
+                <div>
+                    <span class="skill-bubble">Angular</span>
+                    <span class="skill-bubble">React</span>
+                    <span class="skill-bubble">.NET Core</span>
+                    <span class="skill-bubble">Node.js</span>
+                    <span class="skill-bubble">Microservices</span>
+                    <span class="skill-bubble">MVC</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="category-title">Backend & API Development</h3>
+                <div>
+                    <span class="skill-bubble">RESTful APIs</span>
+                    <span class="skill-bubble">GraphQL</span>
+                    <span class="skill-bubble">Entity Framework</span>
+                    <span class="skill-bubble">ASP.NET</span>
+                    <span class="skill-bubble">Express</span>
+                    <span class="skill-bubble">WebSockets</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="category-title">Frontend & UI</h3>
+                <div>
+                    <span class="skill-bubble">Responsive Design</span>
+                    <span class="skill-bubble">SASS/SCSS</span>
+                    <span class="skill-bubble">RxJS</span>
+                    <span class="skill-bubble">NgRx</span>
+                    <span class="skill-bubble">Redux</span>
+                    <span class="skill-bubble">Bootstrap</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="category-title">Principles & Patterns</h3>
+                <div>
+                    <span class="skill-bubble">OOP</span>
+                    <span class="skill-bubble">SOLID</span>
+                    <span class="skill-bubble">DRY</span>
+                    <span class="skill-bubble">Design Patterns</span>
+                    <span class="skill-bubble">Clean Code</span>
+                    <span class="skill-bubble">Agile</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="category-title">Databases & Data</h3>
+                <div>
+                    <span class="skill-bubble">SQL Server</span>
+                    <span class="skill-bubble">MongoDB</span>
+                    <span class="skill-bubble">PostgreSQL</span>
+                    <span class="skill-bubble">Entity Framework</span>
+                    <span class="skill-bubble">Dapper</span>
+                    <span class="skill-bubble">Redis</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="category-title">Integrations & Specializations</h3>
+                <div>
+                    <span class="skill-bubble">Azure</span>
+                    <span class="skill-bubble">AWS</span>
+                    <span class="skill-bubble">Docker</span>
+                    <span class="skill-bubble">Kubernetes</span>
+                    <span class="skill-bubble">CI/CD</span>
+                    <span class="skill-bubble">Stripe API</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="category-title">Testing</h3>
+                <div>
+                    <span class="skill-bubble">Unit Testing</span>
+                    <span class="skill-bubble">Integration Testing</span>
+                    <span class="skill-bubble">Jest</span>
+                    <span class="skill-bubble">xUnit</span>
+                    <span class="skill-bubble">Cypress</span>
+                    <span class="skill-bubble">Selenium</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="category-title">Version Control</h3>
+                <div>
+                    <span class="skill-bubble">Git</span>
+                    <span class="skill-bubble">GitHub</span>
+                    <span class="skill-bubble">GitLab</span>
+                    <span class="skill-bubble">Bitbucket</span>
+                    <span class="skill-bubble">Git Flow</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="category-title">Soft Skills</h3>
+                <div>
+                    <span class="skill-bubble">Team Leadership</span>
+                    <span class="skill-bubble">Mentoring</span>
+                    <span class="skill-bubble">Problem Solving</span>
+                    <span class="skill-bubble">Communication</span>
+                    <span class="skill-bubble">Time Management</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="category-title">Language Proficiency</h3>
+                <div>
+                    <span class="skill-bubble">English (Fluent)</span>
+                    <span class="skill-bubble">Spanish (Intermediate)</span>
+                    <span class="skill-bubble">French (Basic)</span>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- Resume Section -->
+<section id="resume" class="section-resume">
+        <div class="section-header">
+            <h2 class="section-title">Resume</h2>
+            <a href="#" class="btn">Download CV</a>
+        </div>
+        <div class="resume-container">
+            <div class="education-timeline">
+                <h3 style="font-size: 1.5rem; color: var(--accent); margin-bottom: 20px;">Education</h3>
+                <div class="education-item">
+                    <div class="education-header">
+                        <h3 class="education-institution">Tech University</h3>
+                        <span class="education-dates">2015 - 2019</span>
+                    </div>
+                    <p class="education-program">Bachelor of Science in Computer Science</p>
+                    <p class="about-text">
+                        Specialized in software engineering and web development. Graduated with honors. 
+                        Completed coursework in algorithms, data structures, database systems, and 
+                        human-computer interaction.
+                    </p>
+                </div>
+                <div class="education-item">
+                    <div class="education-header">
+                        <h3 class="education-institution">Code Academy</h3>
+                        <span class="education-dates">2014</span>
+                    </div>
+                    <p class="education-program">Full-Stack Web Development Bootcamp</p>
+                    <p class="about-text">
+                        Intensive 12-week program covering frontend and backend development. Built 
+                        multiple projects using modern web technologies and best practices.
+                    </p>
+                </div>
+            </div>
+            <div class="certificates-container">
+                <h3 style="font-size: 1.5rem; color: var(--accent); margin-bottom: 20px;">Certificates</h3>
+                <div class="certificates-grid">
+                    <div class="certificate-card">
+                        <img src="http://static.photos/technology/320x240/1" alt="Certificate" class="certificate-image" data-certificate="1">
+                        <h4 class="certificate-title">Azure Developer Associate</h4>
+                        <p class="certificate-issuer">Microsoft</p>
+                        <a href="#" class="certificate-link">
+                            <i data-feather="external-link"></i> Verify credential
+                        </a>
+                    </div>
+                    <div class="certificate-card">
+                        <img src="http://static.photos/technology/320x240/2" alt="Certificate" class="certificate-image" data-certificate="2">
+                        <h4 class="certificate-title">Angular Expert</h4>
+                        <p class="certificate-issuer">Angular University</p>
+                        <a href="#" class="certificate-link">
+                            <i data-feather="external-link"></i> Verify credential
+                        </a>
+                    </div>
+                    <div class="certificate-card">
+                        <img src="http://static.photos/technology/320x240/3" alt="Certificate" class="certificate-image" data-certificate="3">
+                        <h4 class="certificate-title">Clean Code Specialist</h4>
+                        <p class="certificate-issuer">Udemy</p>
+                        <a href="#" class="certificate-link">
+                            <i data-feather="external-link"></i> Verify credential
+                        </a>
+                    </div>
+                    <div class="certificate-card">
+                        <img src="http://static.photos/technology/320x240/4" alt="Certificate" class="certificate-image" data-certificate="4">
+                        <h4 class="certificate-title">Scrum Master</h4>
+                        <p class="certificate-issuer">Scrum Alliance</p>
+                        <a href="#" class="certificate-link">
+                            <i data-feather="external-link"></i> Verify credential
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="section-contact">
+        <div class="section-header">
+            <h2 class="section-title">Contact</h2>
+        </div>
+        <div class="contact-cards">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i data-feather="github"></i>
+                </div>
+                <h3 class="contact-platform">GitHub</h3>
+                <p class="contact-info">codecanvas-dev</p>
+                <a href="#" target="_blank" class="contact-link">View Profile</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i data-feather="linkedin"></i>
+                </div>
+                <h3 class="contact-platform">LinkedIn</h3>
+                <p class="contact-info">linkedin.com/in/codecanvas</p>
+                <a href="#" target="_blank" class="contact-link">Connect</a>
+            </div>
+            <div class="contact-card" id="email-card">
+                <div class="contact-icon">
+                    <i data-feather="mail"></i>
+                </div>
+                <h3 class="contact-platform">Email</h3>
+                <p class="contact-info">hellocodecanvas.dev</p>
+                <a href="#" class="contact-link" id="copy-email">Copy Email</a>
+            </div>
+        </div>
+        <div class="copied-message" id="copied-message">Email copied to clipboard!</div>
+</section>
+<!-- Footer -->
+<footer>
+    <p>© 2023 CodeCanvas Portfolio. All rights reserved.</p>
+</footer>
+
+    <script>
+        // Mobile sidebar toggle
+        const hamburger = document.querySelector('.hamburger');
+        const mobileSidebar = document.querySelector('.mobile-sidebar');
+        const navbarLinks = document.querySelector('.navbar-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileSidebar.classList.toggle('active');
+        });
+
+        // Close mobile sidebar when clicking a link
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileSidebar.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Highlight active section in navigation
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.navbar-link');
+        const sidebarItems = document.querySelectorAll('.sidebar-link');
+
+        function updateActiveSection() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+
+            sidebarItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.style.backgroundColor = 'rgba(105, 210, 2, 0.1)';
+                    item.style.color = 'var(--accent)';
+                } else {
+                    item.style.backgroundColor = '';
+                    item.style.color = '';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveSection);
+
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Copy email to clipboard
+        const copyEmailBtn = document.getElementById('copy-email');
+        const copiedMessage = document.getElementById('copied-message');
+
+        copyEmailBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            navigator.clipboard.writeText('hello@codecanvas.dev').then(() => {
+                copiedMessage.classList.add('show');
+                setTimeout(() => {
+                    copiedMessage.classList.remove('show');
+                }, 2000);
+            });
+        });
+
+        // Certificate modal functionality
+        const certificateModal = document.getElementById('certificate-modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalClose = document.getElementById('modal-close');
+        const certificateImages = document.querySelectorAll('.certificate-image');
+
+        certificateImages.forEach(img => {
+            img.addEventListener('click', () => {
+                modalImage.src = img.src;
+                modalImage.alt = img.alt;
+                certificateModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            certificateModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        certificateModal.addEventListener('click', (e) => {
+            if (e.target === certificateModal) {
+                certificateModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Initialize Feather Icons
+        document.addEventListener('DOMContentLoaded', () => {
+            if (feather) {
+                feather.replace();
+            }
+        });
+    </script>
