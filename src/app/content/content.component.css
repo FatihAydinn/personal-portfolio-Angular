@@ -93,6 +93,7 @@ body{
 
   .fade-container {
     height: 90vh !important;
+    left: 0 !important;
   }
 
   .card-title {
@@ -191,6 +192,7 @@ body{
   height: 37rem; 
   margin-left: auto; 
   margin-right: auto;
+  left: 9%;
 }
 
 .fade-container .card1 {
