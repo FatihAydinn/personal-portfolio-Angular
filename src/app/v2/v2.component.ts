@@ -1,14 +1,61 @@
-import { Component, ViewEncapsulation, OnInit, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, OnInit, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
+import { GithubapiComponent } from '../githubapi/githubapi.component';
+import { SharedDataService } from '../shared-data.service';
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-v2',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, GithubapiComponent],
   templateUrl: './v2.component.html',
   styleUrl: './v2.component.css',
   encapsulation: ViewEncapsulation.None,
   preserveWhitespaces: false
 })
 export class V2Component implements AfterViewInit, OnDestroy {
+  @ViewChild(GithubapiComponent) githubApi!: GithubapiComponent;
+  get githubRepos() {
+    return this.githubApi?.repositories || [];
+  }
+  experienceitems : { title: string, description: string, technologies: string[] } [] = [
+    {title: "Product Tracking Panel", description: "Tracks the entry date, part count, and invoice number of products received from suppliers. Instantly transfers weight data from a physical scale to the web page.", technologies: ["C# Form", ".NET Core"]},
+    {title: "RFID Tracking System", description: "Each product is tagged with RFID labels. The system logs entry dates, determines shelf location via antenna signals, and detects potential theft events. All data is accessible through a web interface.", technologies: ["RFID", "API", "C# Form", ".NET Core", "MSSQL"]},
+    {title: "Gmail API Integration", description: "Connects to Gmail using Google OAuth 2.0 to access incoming emails. Automatically downloads and forwards .pdf attachments from partner companies.", technologies: ["Google OAuth 2.0", "Gmail API", ".NET Core"]},
+    {title: "Azure Communication Project", description: "Web-based project that enables secure video and voice calls between multiple users using Azure Communication Services.", technologies: ["Azure Communication Services", "JavaScript", "jQuery"]},
+    {title: "Employee Management System", description: "Calculates employee working hours, salaries, payroll, and overtime payments based on tax regulations. Built with an N-Tier architecture.", technologies: [".NET Core", "N-Tier Architecture", "JavaScript", "jQuery", "MSSQL"]},
+    {title: "Microsoft OAuth Integration", description: "Handles user registration and login through Microsoft Entra. Only allows access to users with accounts under a specific domain.", technologies: ["Microsoft Entra", "Azure Active Directory"]},
+    {title: "E-Commerce API Integration System", description: "Combines multiple e-commerce platforms (Trendyol, N11, Pazarama) into a unified system. Streamlines product uploads, updates, deletions, and order tracking with a single operation.", technologies: [".NET Core", "Web API"]}
+  ]
+
+  educationitems : { title: string, program: string, description: string, dates: string } [] = [
+    {title: "Anadolu University", program: "Bachelor's Degree, Management Information Systems", description: "Currently pursuing a Bachelor's Degree in Management Information Systems with a focus on integrating business processes and information technologies. Developed proficiency in database management, system analysis, and enterprise software solutions. Gained practical experience in SQL, project management, and decision support systems, building a strong foundation in both managerial and technical domains.", dates: "September 2025 - Present"},
+    {title: "Kastamonu University", program: "Associate Degree, Computer Programming", description: "Studied Computer Programming with a focus on software fundamentals and development. Gained hands-on experience in C, C#, and ASP.NET, building a strong foundation in web technologies and backend systems.", dates: "September 2019 - June 2021"},
+    {title: "Infotech Academy", program: "Software Development Expertise-MCSD", description: "Completed a Software Expertise course focused on full-stack development, including C# OOP, ASP.NET Core, Web API, and Microservices, with hands-on training in both Code First and DB First approaches using Entity Framework.", dates: "November 2022 - May 2023"},
+    {title: "Techcareer.net", program: "Bootcamp", description: "The bootcamp provided training in ASP.NET Core MVC for building web applications. It included practice with databases and using the MVC model. A project was developed at the end and presented to a senior instructor.", dates: "August 2023 - September 2023"}
+  ]
+
+  stack: {title: string, skill: string[]} [] = [
+    {title: "Languages & Fundamentals", skill: ["C#","JavaScript","TypeScript", "OOP"]},
+    {title: "Frameworks & Architectures", skill: ["WinForms", "MVC", "N-Layer Architecture", "Onion Architecture", "Microservices"]},
+    {title: "Backend & API Development", skill: ["ASP.NET Core", "Entity Framework", "Identity"]},
+    {title: "Frontend & UI", skill: ["HTML", "CSS", "Angular", "jQuery", "Bootstrap", "UX/UI"]},
+    {title: "Principles & Patterns", skill: ["SOLID", "Dependency Injection (DI)", "Repository Pattern", "Open-closed Principle"]},
+    {title: "Databases & Data Management", skill: ["MSSQL Server", "MongoDB", "Redis"]},
+    {title: "Integrations & Specializations", skill: ["RFID Solutions", "E-commerce API Integrations"]},
+    {title: "Testing ", skill: ["Postman", "Swagger", "Automated Builds & Testing (CI)"]},
+    {title: "Version Control", skill: ["Git", "GitHub"]},
+    {title: "Soft Skills", skill: ["Problem Solving", "Self-Discipline", "Teamwork & Collaboration", "Continuous Learning", "Self-motivated"]},
+    {title: "Language Proficiency", skill: ["Turkish – Native" , "English – Upper-Intermediate"]},
+  ]
+
+  certificates: {title: string, company: string, description: string, imgurl: string, link: string } [] = [
+    {title: "Backend Development with .Net Core", company: "Microsoft", description: "Focused on backend development with .NET Core, the course covered key principles for building robust and maintainable systems. It refined my abilities in creating RESTful APIs, managing data effectively, and implementing secure middleware pipelines.", imgurl: "/certificates/certf1.jpg", link: "www.coursera.org/account/accomplishments/records/FJ16052QVIQU"},
+    {title: "Software Specialization - MCSD", company: "Infotech Academy", description: "This program offered comprehensive training in modern software development practices, including backend and frontend technologies, project structuring, and essential programming concepts. It equipped me with practical skills to develop scalable and maintainable applications.", imgurl: "/certificates/certf2.jpg", link: "https://www.linkedin.com/feed/update/urn:li:activity:7087064046780215296/"},
+    {title: "ASP.Net MVC Bootcamp", company: "Techcareer", description: "Gaining hands-on experience in ASP.NET MVC, the training offered practical insight into web application development using the MVC pattern. It strengthened my understanding of routing, controller actions, and structured application design within the .NET framework.", imgurl: "/certificates/certf3.png", link: "https://certificates.techcareer.net/tr/verify/52061439390497"}
+  ]
+
+  array: any[] = [];
+
   hamburger: any;
   mobileSidebar: any;
   navbarLinks: any;
@@ -61,12 +108,24 @@ export class V2Component implements AfterViewInit, OnDestroy {
 
     // 3. Smooth scroll for navigation links - JS KODU
     document.querySelectorAll('a[href^="#"]').forEach((anchor: any) => {
-      anchor.addEventListener('click', (e: Event) => {  // arrow function kullan
+      anchor.addEventListener('click', (e: Event) => {
         e.preventDefault();
-        const targetId = anchor.getAttribute('href');  // 'anchor' değişkenini kullan
+        const targetId = anchor.getAttribute('href');
         const targetElement = document.querySelector(targetId);
+        
         if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
+          // 1. Önce smooth dene
+          try {
+            targetElement.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'start' 
+            });
+          } 
+          // 2. Hata alırsa polyfill ile veya instant yap
+          catch (error) {
+            // Polyfill yoksa direkt geç
+            targetElement.scrollIntoView({ behavior: 'auto', block: 'start' });
+          }
         }
       });
     });

@@ -247,7 +247,7 @@ section.visible {
 }
 .timeline-item::before {
     content: '';
-    position: absolute;
+    /* position: absolute; */
     top: 32px;
     left: -18px;
     width: 22px;

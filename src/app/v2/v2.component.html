@@ -6,7 +6,8 @@
         <span></span>
     </div>
     <div class="navbar-links">
-        <a href="#about" class="navbar-link">About</a>
+        <a href="#about" class="navbar-link">About</a>        
+        <a href="#experience" class="navbar-link">Experience</a>
         <a href="#work" class="navbar-link">Work</a>
         <a href="#skills" class="navbar-link">Skills</a>
         <a href="#resume" class="navbar-link">Resume</a>
@@ -19,6 +20,7 @@
         <h3 class="sidebar-category-title">Navigation</h3>
         <div class="sidebar-links">
             <a href="#about" class="sidebar-link">About</a>
+            <a href="#experience" class="navbar-link">Experience</a>
             <a href="#work" class="sidebar-link">Work</a>
             <a href="#skills" class="sidebar-link">Skills</a>
             <a href="#resume" class="sidebar-link">Resume</a>
@@ -51,66 +53,65 @@
         </div>
         <div class="about-content">
             <p class="about-text">
-                Hello! I'm a passionate full-stack developer with over 5 years of experience building web applications. 
-                My journey in tech began when I built my first website at 15, and I've been hooked ever since. 
-                I specialize in creating efficient, scalable solutions that deliver exceptional user experiences.
+                I’m Fatih Aydın, a software developer with two years of experience, focused on building practical and reliable applications that create real value for people and businesses.
             </p>
             <p class="about-text">
-                My approach combines technical expertise with creative problem-solving. I believe that great 
-                software should not only function flawlessly but also delight users with intuitive interfaces 
-                and thoughtful interactions. This philosophy guides every project I undertake.
+                My professional background is centered on .NET, which remains my core expertise. As a full-stack developer, I develop robust back-end systems using C#, .NET Core, and Web API with modern architectural approaches, while also creating dynamic front-end interfaces with JavaScript, jQuery, TypeScript, and Angular. I also have experience in desktop application development and RFID-based solutions.
             </p>
             <p class="about-text">
-                When I'm not coding, you can find me contributing to open-source projects, mentoring junior 
-                developers, or exploring new technologies. I'm particularly interested in the intersection 
-                of design and development, where functionality meets aesthetics.
+                I am comfortable managing projects end-to-end, from the initial idea and development process to server setup and deployment. I strongly believe in continuous learning and actively follow new technologies. In addition, I share my personal projects on GitHub to improve my skills and contribute to the developer community.
             </p>
             <p class="about-text">
-                I thrive in collaborative environments where I can both share my knowledge and learn from 
-                others. My goal is to continuously grow as a developer while creating meaningful digital 
-                experiences that make a difference.
+                I am motivated to grow as a developer and open to new challenges that will help me advance my career in software development.
             </p>
         </div>
 </section>
+
+<!-- Experiences Section -->
+<section id="experience" class="section-experiences">
+        <div class="section-header">
+            <h2 class="section-title">Professional Experience</h2>
+        </div>
+        <div class="experiences-container">
+            <div class="timeline">                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Full-Stack Developer</h3>
+                        <span class="timeline-date">2023 September - 2026 January</span>
+                    </div>
+                    <p class="timeline-description">
+                        I worked on internal software projects developed for company use. I took part in building web and desktop systems for product tracking, RFID-based monitoring, employee management, and system integrations.
+                        These projects focused on automating business processes such as inventory control, user authentication, data tracking, and communication services. 
+                        I mainly worked with .NET Core technologies and contributed to both backend logic and system integrations to improve efficiency and reliability.
+                    </p>
+                    <div class="timeline-tags">
+                        <span class="tag">C#</span>
+                        <span class="tag">ASP.Net Core</span>
+                        <span class="tag">Microsoft SQL Server</span>
+                        <span class="tag">Windows Forms</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">jQuery</span>
+                        <span class="tag">RFID</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
 <!-- Work Section -->
 <section id="work" class="section-work">
         <div class="section-header">
             <h2 class="section-title">Work Experience</h2>
         </div>
         <div class="work-container">
-            <div class="timeline">
-                <div class="timeline-item">
+            <div class="timeline">                
+                <div class="timeline-item" *ngFor="let item of experienceitems">
                     <div class="timeline-header">
-                        <h3 class="timeline-title">Senior Full-Stack Developer</h3>
-                        <span class="timeline-date">2021 - Present</span>
+                        <h3 class="timeline-title">{{item.title}}</h3>
                     </div>
-                    <p class="timeline-description">
-                        Led the development of a SaaS platform serving over 50,000 users. Architected the microservices 
-                        infrastructure and implemented CI/CD pipelines that reduced deployment times by 70%.
-                    </p>
-                    <div class="timeline-tags">
-                        <span class="tag">C#</span>
-                        <span class="tag">.NET Core</span>
-                        <span class="tag">Angular</span>
-                        <span class="tag">Azure</span>
-                        <span class="tag">Docker</span>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <h3 class="timeline-title">Junior Developer</h3>
-                        <span class="timeline-date">2017 - 2019</span>
-                    </div>
-                    <p class="timeline-description">
-                        Built and maintained internal tools for a marketing agency. Automated repetitive tasks 
-                        that saved the team over 20 hours per week. Collaborated with designers to implement 
-                        pixel-perfect interfaces.
-                    </p>
-                    <div class="timeline-tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">PHP</span>
-                        <span class="tag">WordPress</span>
-                        <span class="tag">MySQL</span>
+                    <p class="timeline-description"> {{item.description}} </p>
+                    <div class="timeline-tags">                        
+                        <span class="tag" *ngFor="let stack of item.technologies">{{stack}}</span>
                     </div>
                 </div>
             </div>
@@ -119,21 +120,13 @@
         <div class="section-header" style="margin-top: 80px;">
             <h2 class="section-title">GitHub Projects</h2>
         </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3 class="project-title"><a href="#" target="_blank">E-Commerce Platform</a></h3>
-                <p class="project-description">
-                    A full-featured e-commerce solution with inventory management, payment processing, 
-                    and analytics dashboard.
-                </p>
-                <div class="timeline-tags">
-                    <span class="tag">Node.js</span>
-                    <span class="tag">React</span>
-                    <span class="tag">MongoDB</span>
-                    <span class="tag">Stripe API</span>
-                </div>
+        <div class="projects-grid mb-3">
+            <app-githubapi style="display: none;"></app-githubapi>
+            <div class="project-card" *ngFor="let repo of githubRepos">
+                <h3 class="project-title"><a href="{{repo.clone_url}}" target="_blank">{{repo.name}}</a></h3>
+                <p class="project-description"> {{repo.description}} </p>
             </div>
-            <div class="project-card">
+            <!-- <div class="project-card">
                 <h3 class="project-title"><a href="#" target="_blank">Task Management App</a></h3>
                 <p class="project-description">
                     Productivity application with real-time collaboration features, calendar integration, 
@@ -144,32 +137,9 @@
                     <span class="tag">Firebase</span>
                     <span class="tag">RxJS</span>
                 </div>
-            </div>
-            <div class="project-card">
-                <h3 class="project-title"><a href="#" target="_blank">API Gateway</a></h3>
-                <p class="project-description">
-                    Microservices gateway with authentication, rate limiting, and request transformation 
-                    capabilities.
-                </p>
-                <div class="timeline-tags">
-                    <span class="tag">.NET Core</span>
-                    <span class="tag">Ocelot</span>
-                    <span class="tag">JWT</span>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3 class="project-title"><a href="#" target="_blank">Portfolio Template</a></h3>
-                <p class="project-description">
-                    Open-source portfolio template for developers with dark/light mode, responsive design, 
-                    and easy customization.
-                </p>
-                <div class="timeline-tags">
-                    <span class="tag">HTML/CSS</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">GSAP</span>
-                </div>
-            </div>
+            </div> -->
         </div>
+        <a href="https://github.com/FatihAydinn?tab=repositories" target="_blank" class="mb-4 mt-2" style="color: #69d202db; font-family: monospace; margin-left: 45%;">Click for more!</a>
 </section>
 <!-- Skills Section -->
 <section id="skills" class="section-skills">

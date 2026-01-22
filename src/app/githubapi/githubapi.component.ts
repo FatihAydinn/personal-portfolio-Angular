@@ -18,10 +18,10 @@ export class GithubapiComponent implements OnInit {
 
   ngOnInit(): void {
     const username = 'FatihAydinn'; 
-    const url = `https://api.github.com/users/${username}/repos?sort=created&direction=desc`;
+    const url = `https://api.github.com/users/${username}/repos?sort=updated&direction=desc`;
 
     this.http.get<any[]>(url).subscribe(data => {
-      this.repositories = data.slice(0, 4); 
+      this.repositories = data.slice(0, 6); 
       this.sharedData.setArray(this.repositories);
     });
   }
