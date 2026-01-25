@@ -150,120 +150,10 @@
             <h2 class="section-title">Skills</h2>
         </div>
         <div class="skills-container">
-            <div class="skill-category">
-                <h3 class="category-title">Languages & Fundamentals</h3>
+            <div class="skill-category" *ngFor="let item of stack">
+                <h3 class="category-title">{{item.title}}</h3>
                 <div>
-                    <span class="skill-bubble">JavaScript</span>
-                    <span class="skill-bubble">TypeScript</span>
-                    <span class="skill-bubble">C#</span>
-                    <span class="skill-bubble">Python</span>
-                    <span class="skill-bubble">HTML5</span>
-                    <span class="skill-bubble">CSS3</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3 class="category-title">Frameworks & Architectures</h3>
-                <div>
-                    <span class="skill-bubble">Angular</span>
-                    <span class="skill-bubble">React</span>
-                    <span class="skill-bubble">.NET Core</span>
-                    <span class="skill-bubble">Node.js</span>
-                    <span class="skill-bubble">Microservices</span>
-                    <span class="skill-bubble">MVC</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3 class="category-title">Backend & API Development</h3>
-                <div>
-                    <span class="skill-bubble">RESTful APIs</span>
-                    <span class="skill-bubble">GraphQL</span>
-                    <span class="skill-bubble">Entity Framework</span>
-                    <span class="skill-bubble">ASP.NET</span>
-                    <span class="skill-bubble">Express</span>
-                    <span class="skill-bubble">WebSockets</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3 class="category-title">Frontend & UI</h3>
-                <div>
-                    <span class="skill-bubble">Responsive Design</span>
-                    <span class="skill-bubble">SASS/SCSS</span>
-                    <span class="skill-bubble">RxJS</span>
-                    <span class="skill-bubble">NgRx</span>
-                    <span class="skill-bubble">Redux</span>
-                    <span class="skill-bubble">Bootstrap</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3 class="category-title">Principles & Patterns</h3>
-                <div>
-                    <span class="skill-bubble">OOP</span>
-                    <span class="skill-bubble">SOLID</span>
-                    <span class="skill-bubble">DRY</span>
-                    <span class="skill-bubble">Design Patterns</span>
-                    <span class="skill-bubble">Clean Code</span>
-                    <span class="skill-bubble">Agile</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3 class="category-title">Databases & Data</h3>
-                <div>
-                    <span class="skill-bubble">SQL Server</span>
-                    <span class="skill-bubble">MongoDB</span>
-                    <span class="skill-bubble">PostgreSQL</span>
-                    <span class="skill-bubble">Entity Framework</span>
-                    <span class="skill-bubble">Dapper</span>
-                    <span class="skill-bubble">Redis</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3 class="category-title">Integrations & Specializations</h3>
-                <div>
-                    <span class="skill-bubble">Azure</span>
-                    <span class="skill-bubble">AWS</span>
-                    <span class="skill-bubble">Docker</span>
-                    <span class="skill-bubble">Kubernetes</span>
-                    <span class="skill-bubble">CI/CD</span>
-                    <span class="skill-bubble">Stripe API</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3 class="category-title">Testing</h3>
-                <div>
-                    <span class="skill-bubble">Unit Testing</span>
-                    <span class="skill-bubble">Integration Testing</span>
-                    <span class="skill-bubble">Jest</span>
-                    <span class="skill-bubble">xUnit</span>
-                    <span class="skill-bubble">Cypress</span>
-                    <span class="skill-bubble">Selenium</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3 class="category-title">Version Control</h3>
-                <div>
-                    <span class="skill-bubble">Git</span>
-                    <span class="skill-bubble">GitHub</span>
-                    <span class="skill-bubble">GitLab</span>
-                    <span class="skill-bubble">Bitbucket</span>
-                    <span class="skill-bubble">Git Flow</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3 class="category-title">Soft Skills</h3>
-                <div>
-                    <span class="skill-bubble">Team Leadership</span>
-                    <span class="skill-bubble">Mentoring</span>
-                    <span class="skill-bubble">Problem Solving</span>
-                    <span class="skill-bubble">Communication</span>
-                    <span class="skill-bubble">Time Management</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3 class="category-title">Language Proficiency</h3>
-                <div>
-                    <span class="skill-bubble">English (Fluent)</span>
-                    <span class="skill-bubble">Spanish (Intermediate)</span>
-                    <span class="skill-bubble">French (Basic)</span>
+                    <span class="skill-bubble" *ngFor="let stacks of item.skill">{{stacks}}</span>
                 </div>
             </div>
         </div>
@@ -277,42 +167,27 @@
         <div class="resume-container">
             <div class="education-timeline">
                 <h3 style="font-size: 1.5rem; color: var(--accent); margin-bottom: 20px;">Education</h3>
-                <div class="education-item">
+                <div class="education-item" *ngFor="let item of educationitems">
                     <div class="education-header">
-                        <h3 class="education-institution">Tech University</h3>
-                        <span class="education-dates">2015 - 2019</span>
+                        <h3 class="education-institution">{{item.title}}</h3>
+                        <span class="education-dates">{{item.dates}}</span>
                     </div>
-                    <p class="education-program">Bachelor of Science in Computer Science</p>
-                    <p class="about-text">
-                        Specialized in software engineering and web development. Graduated with honors. 
-                        Completed coursework in algorithms, data structures, database systems, and 
-                        human-computer interaction.
-                    </p>
-                </div>
-                <div class="education-item">
-                    <div class="education-header">
-                        <h3 class="education-institution">Code Academy</h3>
-                        <span class="education-dates">2014</span>
-                    </div>
-                    <p class="education-program">Full-Stack Web Development Bootcamp</p>
-                    <p class="about-text">
-                        Intensive 12-week program covering frontend and backend development. Built 
-                        multiple projects using modern web technologies and best practices.
-                    </p>
+                    <p class="education-program">{{item.program}}</p>
+                    <p class="about-text" style="color: thistle; font-size: 0.9rem;">{{item.description}}</p>
                 </div>
             </div>
             <div class="certificates-container">
                 <h3 style="font-size: 1.5rem; color: var(--accent); margin-bottom: 20px;">Certificates</h3>
                 <div class="certificates-grid">
-                    <div class="certificate-card">
-                        <img src="http://static.photos/technology/320x240/1" alt="Certificate" class="certificate-image" data-certificate="1">
-                        <h4 class="certificate-title">Azure Developer Associate</h4>
-                        <p class="certificate-issuer">Microsoft</p>
-                        <a href="#" class="certificate-link">
+                    <div class="certificate-card" *ngFor="let item of certificates">
+                        <img src="{{item.imgurl}}" alt="Certificate" class="certificate-image" data-certificate="1">
+                        <h4 class="certificate-title">{{item.title}}</h4>
+                        <p class="certificate-issuer">{{item.company}}</p>
+                        <a href="{{item.link}}" class="certificate-link">
                             <i data-feather="external-link"></i> Verify credential
                         </a>
                     </div>
-                    <div class="certificate-card">
+                    <!-- <div class="certificate-card">
                         <img src="http://static.photos/technology/320x240/2" alt="Certificate" class="certificate-image" data-certificate="2">
                         <h4 class="certificate-title">Angular Expert</h4>
                         <p class="certificate-issuer">Angular University</p>
@@ -335,7 +210,7 @@
                         <a href="#" class="certificate-link">
                             <i data-feather="external-link"></i> Verify credential
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -351,31 +226,31 @@
                     <i data-feather="github"></i>
                 </div>
                 <h3 class="contact-platform">GitHub</h3>
-                <p class="contact-info">codecanvas-dev</p>
-                <a href="#" target="_blank" class="contact-link">View Profile</a>
+                <p class="contact-info">github.com/FatihAydinn</p>
+                <a href="https://www.github.com/FatihAydinn" target="_blank" class="contact-link">View Profile</a>
             </div>
             <div class="contact-card">
                 <div class="contact-icon">
                     <i data-feather="linkedin"></i>
                 </div>
                 <h3 class="contact-platform">LinkedIn</h3>
-                <p class="contact-info">linkedin.com/in/codecanvas</p>
-                <a href="#" target="_blank" class="contact-link">Connect</a>
+                <p class="contact-info">linkedin.com/in/fatih--aydin</p>
+                <a href="https://www.linkedin.com/in/fatih--aydin" target="_blank" class="contact-link">Connect</a>
             </div>
             <div class="contact-card" id="email-card">
                 <div class="contact-icon">
                     <i data-feather="mail"></i>
                 </div>
                 <h3 class="contact-platform">Email</h3>
-                <p class="contact-info">hellocodecanvas.dev</p>
-                <a href="#" class="contact-link" id="copy-email">Copy Email</a>
+                <p class="contact-info">a.fatihaydn&#64;gmail.com</p>
+                <a href="mailto:a.fatihaydn@gmail.com" class="contact-link" id="copy-email">Send Email</a>
             </div>
         </div>
-        <div class="copied-message" id="copied-message">Email copied to clipboard!</div>
+        <!-- <div class="copied-message" id="copied-message">Email copied to clipboard!</div> -->
 </section>
 <!-- Footer -->
 <footer>
-    <p>© 2023 CodeCanvas Portfolio. All rights reserved.</p>
+    <p></p>
 </footer>
 
     <script>

@@ -29,27 +29,27 @@ export class V2Component implements AfterViewInit, OnDestroy {
 
   educationitems : { title: string, program: string, description: string, dates: string } [] = [
     {title: "Anadolu University", program: "Bachelor's Degree, Management Information Systems", description: "Currently pursuing a Bachelor's Degree in Management Information Systems with a focus on integrating business processes and information technologies. Developed proficiency in database management, system analysis, and enterprise software solutions. Gained practical experience in SQL, project management, and decision support systems, building a strong foundation in both managerial and technical domains.", dates: "September 2025 - Present"},
-    {title: "Kastamonu University", program: "Associate Degree, Computer Programming", description: "Studied Computer Programming with a focus on software fundamentals and development. Gained hands-on experience in C, C#, and ASP.NET, building a strong foundation in web technologies and backend systems.", dates: "September 2019 - June 2021"},
-    {title: "Infotech Academy", program: "Software Development Expertise-MCSD", description: "Completed a Software Expertise course focused on full-stack development, including C# OOP, ASP.NET Core, Web API, and Microservices, with hands-on training in both Code First and DB First approaches using Entity Framework.", dates: "November 2022 - May 2023"},
-    {title: "Techcareer.net", program: "Bootcamp", description: "The bootcamp provided training in ASP.NET Core MVC for building web applications. It included practice with databases and using the MVC model. A project was developed at the end and presented to a senior instructor.", dates: "August 2023 - September 2023"}
+    {title: "Kastamonu University", program: "Associate Degree, Computer Programming", description: "Studied Computer Programming with a focus on software fundamentals and development. Gained hands-on experience in C, C#, and ASP.NET, building a strong foundation in web technologies and backend systems.", dates: "September 2019 - June 2021"}
+    // {title: "Infotech Academy", program: "Software Development Expertise-MCSD", description: "Completed a Software Expertise course focused on full-stack development, including C# OOP, ASP.NET Core, Web API, and Microservices, with hands-on training in both Code First and DB First approaches using Entity Framework.", dates: "November 2022 - May 2023"},
+    // {title: "Techcareer.net", program: "Bootcamp", description: "The bootcamp provided training in ASP.NET Core MVC for building web applications. It included practice with databases and using the MVC model. A project was developed at the end and presented to a senior instructor.", dates: "August 2023 - September 2023"}
   ]
 
   stack: {title: string, skill: string[]} [] = [
-    {title: "Languages & Fundamentals", skill: ["C#","JavaScript","TypeScript", "OOP"]},
-    {title: "Frameworks & Architectures", skill: ["WinForms", "MVC", "N-Layer Architecture", "Onion Architecture", "Microservices"]},
-    {title: "Backend & API Development", skill: ["ASP.NET Core", "Entity Framework", "Identity"]},
-    {title: "Frontend & UI", skill: ["HTML", "CSS", "Angular", "jQuery", "Bootstrap", "UX/UI"]},
-    {title: "Principles & Patterns", skill: ["SOLID", "Dependency Injection (DI)", "Repository Pattern", "Open-closed Principle"]},
+    {title: "Backend & API Development", skill: ["ASP.NET Core", "Entity Framework", "Identity", "ADO.Net"]},
+    {title: "Frameworks & Architectures", skill: ["Onion Architecture", "N-Layer Architecture", "WinForms", "MVC"]},
     {title: "Databases & Data Management", skill: ["MSSQL Server", "MongoDB", "Redis"]},
+    {title: "Languages & Fundamentals", skill: ["C#","JavaScript","TypeScript", "OOP"]},
+    {title: "Principles & Patterns", skill: ["SOLID", "Dependency Injection (DI)", "Repository Pattern", "Open-closed Principle"]},
+    {title: "Frontend & UI", skill: ["HTML", "CSS", "Angular", "jQuery", "Bootstrap", "UX/UI"]},
     {title: "Integrations & Specializations", skill: ["RFID Solutions", "E-commerce API Integrations"]},
-    {title: "Testing ", skill: ["Postman", "Swagger", "Automated Builds & Testing (CI)"]},
+    {title: "Testing ", skill: ["Postman", "Swagger", "xUnit & Integration Test"]},
     {title: "Version Control", skill: ["Git", "GitHub"]},
     {title: "Soft Skills", skill: ["Problem Solving", "Self-Discipline", "Teamwork & Collaboration", "Continuous Learning", "Self-motivated"]},
     {title: "Language Proficiency", skill: ["Turkish – Native" , "English – Upper-Intermediate"]},
   ]
 
   certificates: {title: string, company: string, description: string, imgurl: string, link: string } [] = [
-    {title: "Backend Development with .Net Core", company: "Microsoft", description: "Focused on backend development with .NET Core, the course covered key principles for building robust and maintainable systems. It refined my abilities in creating RESTful APIs, managing data effectively, and implementing secure middleware pipelines.", imgurl: "/certificates/certf1.jpg", link: "www.coursera.org/account/accomplishments/records/FJ16052QVIQU"},
+    {title: "Backend Development with .Net Core", company: "Microsoft", description: "Focused on backend development with .NET Core, the course covered key principles for building robust and maintainable systems. It refined my abilities in creating RESTful APIs, managing data effectively, and implementing secure middleware pipelines.", imgurl: "/certificates/certf1.jpg", link: "https://www.coursera.org/account/accomplishments/records/FJ16052QVIQU"},
     {title: "Software Specialization - MCSD", company: "Infotech Academy", description: "This program offered comprehensive training in modern software development practices, including backend and frontend technologies, project structuring, and essential programming concepts. It equipped me with practical skills to develop scalable and maintainable applications.", imgurl: "/certificates/certf2.jpg", link: "https://www.linkedin.com/feed/update/urn:li:activity:7087064046780215296/"},
     {title: "ASP.Net MVC Bootcamp", company: "Techcareer", description: "Gaining hands-on experience in ASP.NET MVC, the training offered practical insight into web application development using the MVC pattern. It strengthened my understanding of routing, controller actions, and structured application design within the .NET framework.", imgurl: "/certificates/certf3.png", link: "https://certificates.techcareer.net/tr/verify/52061439390497"}
   ]
