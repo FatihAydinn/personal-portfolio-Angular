@@ -1,5 +1,5 @@
 <nav class="navbar">
-    <div class="navbar-logo">CodeCanvas</div>
+    <div class="navbar-logo"></div>
     <div class="hamburger">
         <span></span>
         <span></span>
@@ -129,20 +129,10 @@
                 <h3 class="project-title"><a href="{{repo.clone_url}}" target="_blank">{{repo.name}}</a></h3>
                 <p class="project-description"> {{repo.description}} </p>
             </div>
-            <!-- <div class="project-card">
-                <h3 class="project-title"><a href="#" target="_blank">Task Management App</a></h3>
-                <p class="project-description">
-                    Productivity application with real-time collaboration features, calendar integration, 
-                    and customizable workflows.
-                </p>
-                <div class="timeline-tags">
-                    <span class="tag">Angular</span>
-                    <span class="tag">Firebase</span>
-                    <span class="tag">RxJS</span>
-                </div>
-            </div> -->
         </div>
-        <a href="https://github.com/FatihAydinn?tab=repositories" target="_blank" class="mb-4 mt-2" style="color: #8799fedb; font-family: monospace; margin-left: 45%;">Click for more!</a>
+        <div class="text-center">
+            <a href="https://github.com/FatihAydinn?tab=repositories" target="_blank" class="mb-4 mt-2" style="color: #8799fedb; font-family: monospace;">Click for more!</a> 
+        </div>
 </section>
 <!-- Skills Section -->
 <section id="skills" class="section-skills">
@@ -184,7 +174,7 @@
                         <h4 class="certificate-title">{{item.title}}</h4>
                         <p class="certificate-issuer">{{item.company}}</p>
                         <a href="{{item.link}}" class="certificate-link">
-                            <i data-feather="external-link"></i> Verify credential
+                            <i data-feather="external-link" target="_blank"></i> Verify credential
                         </a>
                     </div>
                     <!-- <div class="certificate-card">
