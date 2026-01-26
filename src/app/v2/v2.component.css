@@ -8,7 +8,8 @@
     --background: #121212;
     --primary-text: #FFFFFF;
     --secondary-text: #B0B0B0;
-    --accent: #69d202;
+    /* --accent: #69d202; */
+    --accent: #405389;    
     --nav-height: 70px;
     --section-padding: 80px 20px;
     --max-width: 1200px;
@@ -117,8 +118,8 @@ body {
     transition: all 0.3s;
 }
 .sidebar-link:hover {
-    background-color: rgba(105, 210, 2, 0.1);
-    color: var(--accent);
+    background-color: rgb(2 133 210 / 10%);
+    color: #c7d1ef;
 }
 .modal {
     display: none;
@@ -280,8 +281,10 @@ section.visible {
 }
 .tag {
     padding: 5px 10px;
-    background-color: rgba(105, 210, 2, 0.2);
-    color: var(--accent);
+    background-color: #40538959;
+    border: 1px solid rgb(49 67 115 / 30%);
+    /* background-color: rgba(105, 210, 2, 0.2); */
+    color: white;
     border-radius: 20px;
     font-size: 0.8rem;
 }
@@ -326,21 +329,23 @@ section.visible {
     color: var(--accent);
     margin-bottom: 15px;
     padding-bottom: 5px;
-    border-bottom: 1px solid rgba(105, 210, 2, 0.3);
+    border-bottom: 1px solid rgb(18 0 255 / 30%);
 }
 .skill-bubble {
     display: inline-block;
     padding: 8px 15px;
-    background-color: rgba(105, 210, 2, 0.1);
+    /* background-color: rgba(105, 210, 2, 0.1);
+    border: 1px solid rgba(105, 210, 2, 0.3); */
+    background-color: #40538959;
+    border: 1px solid rgb(49 67 115 / 30%);
     color: white;
-    border: 1px solid rgba(105, 210, 2, 0.3);
     border-radius: 20px;
     margin: 5px;
     font-size: 0.9rem;
     transition: all 0.3s;
 }
 .skill-bubble:hover {
-    background-color: rgba(105, 210, 2, 0.3);
+    background-color: rgba(64, 82, 136);
     transform: translateY(-2px);
 }
 .resume-container {

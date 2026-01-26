@@ -254,8 +254,8 @@ export class V2Component implements AfterViewInit, OnDestroy {
       this.sidebarItems.forEach((item: any) => {
         item.classList.remove('active');
         if (item.getAttribute('href') === `#${current}`) {
-          item.style.backgroundColor = 'rgba(105, 210, 2, 0.1)';
-          item.style.color = 'var(--accent)';
+          item.style.backgroundColor = 'rgb(2 133 210 / 10%)';
+          item.style.color = 'white';
         } else {
           item.style.backgroundColor = '';
           item.style.color = '';
