@@ -1,7 +1,8 @@
-import { Component, ViewChild, ViewEncapsulation, OnInit, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, OnInit, AfterViewInit, OnDestroy, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { GithubapiComponent } from '../githubapi/githubapi.component';
 import { SharedDataService } from '../shared-data.service';
 import { CommonModule } from '@angular/common'; 
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-v2',
@@ -12,7 +13,7 @@ import { CommonModule } from '@angular/common';
   encapsulation: ViewEncapsulation.None,
   preserveWhitespaces: false
 })
-export class V2Component implements AfterViewInit, OnDestroy {
+export class V2Component implements AfterViewInit, OnDestroy, OnInit {
   @ViewChild(GithubapiComponent) githubApi!: GithubapiComponent;
   get githubRepos() {
     return this.githubApi?.repositories || [];
@@ -75,6 +76,11 @@ export class V2Component implements AfterViewInit, OnDestroy {
   // private observer: IntersectionObserver | null = null;
 
   ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        this.initAllFunctions();
+      }, 0);
+    }
   }
 
   ngAfterViewInit() {
@@ -83,22 +89,14 @@ export class V2Component implements AfterViewInit, OnDestroy {
     }, 100);    
   }
 
+constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   initAllFunctions() {
-    // Tüm JS kodlarını bu fonksiyonda topla
-    
-    // 1. Mobile sidebar toggle - JS KODU
-    this.hamburger = document.querySelector('.hamburger');
-    this.mobileSidebar = document.querySelector('.mobile-sidebar');
-    this.navbarLinks = document.querySelector('.navbar-links');
+    if (!isPlatformBrowser(this.platformId)) return;
+      this.hamburger = document.querySelector('.hamburger');
+      this.mobileSidebar = document.querySelector('.mobile-sidebar');
+      this.navbarLinks = document.querySelector('.navbar-links');
 
-    if (this.hamburger) {
-      this.hamburger.addEventListener('click', () => {
-        this.hamburger.classList.toggle('active');
-        this.mobileSidebar.classList.toggle('active');
-      });
-    }
-
-    // 2. Close mobile sidebar when clicking a link - JS KODU
     document.querySelectorAll('.sidebar-link').forEach((link: any) => {
       link.addEventListener('click', () => {
         if (this.hamburger) this.hamburger.classList.remove('active');
@@ -106,7 +104,6 @@ export class V2Component implements AfterViewInit, OnDestroy {
       });
     });
 
-    // 3. Smooth scroll for navigation links - JS KODU
     document.querySelectorAll('a[href^="#"]').forEach((anchor: any) => {
       anchor.addEventListener('click', (e: Event) => {
         e.preventDefault();
@@ -114,30 +111,23 @@ export class V2Component implements AfterViewInit, OnDestroy {
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
-          // 1. Önce smooth dene
           try {
             targetElement.scrollIntoView({ 
               behavior: 'smooth', 
               block: 'start' 
             });
           } 
-          // 2. Hata alırsa polyfill ile veya instant yap
           catch (error) {
-            // Polyfill yoksa direkt geç
             targetElement.scrollIntoView({ behavior: 'auto', block: 'start' });
           }
         }
       });
     });
 
-    // 4. Highlight active section in navigation - JS KODU
     this.sections = document.querySelectorAll('section');
     this.navItems = document.querySelectorAll('.navbar-link');
     this.sidebarItems = document.querySelectorAll('.sidebar-link');
 
-    // Scroll event'i zaten @HostListener ile dinlenecek
-
-    // 5. Scroll animation - JS KODU
     const observerOptions = {
       threshold: 0.1
     };
@@ -156,7 +146,6 @@ export class V2Component implements AfterViewInit, OnDestroy {
       });
     }
 
-    // 6. Copy email to clipboard - JS KODU
     this.copyEmailBtn = document.getElementById('copy-email');
     this.copiedMessage = document.getElementById('copied-message');
 
@@ -174,7 +163,6 @@ export class V2Component implements AfterViewInit, OnDestroy {
       });
     }
 
-    // 7. Certificate modal functionality - JS KODU
     this.certificateModal = document.getElementById('certificate-modal');
     this.modalImage = document.getElementById('modal-image');
     this.modalClose = document.getElementById('modal-close');
@@ -213,20 +201,16 @@ export class V2Component implements AfterViewInit, OnDestroy {
       });
     }
 
-    // 8. Initialize Feather Icons - JS KODU
-    // Angular zaten DOMContentLoaded gibi çalıştığı için doğrudan çalıştır
     if (typeof (window as any).feather !== 'undefined') {
       (window as any).feather.replace();
     }
   }
 
-  // 9. Scroll event için HostListener - JS fonksiyonunu çağır
   @HostListener('window:scroll')
   onWindowScroll() {
-    this.updateActiveSection(); // JS fonksiyonunu çağır
+    this.updateActiveSection();
   }
 
-  // 10. updateActiveSection fonksiyonu - JS KODU
   updateActiveSection() {
     let current = '';
     
@@ -264,7 +248,6 @@ export class V2Component implements AfterViewInit, OnDestroy {
     }
   }
 
-  // 11. Component yok edilirken observer'ı temizle
   ngOnDestroy() {
     if (this.observer) {
       this.observer.disconnect();
