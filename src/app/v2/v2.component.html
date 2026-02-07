@@ -170,7 +170,7 @@
                 <h3 style="font-size: 1.5rem; color: var(--accent); margin-bottom: 20px;">Certificates</h3>
                 <div class="certificates-grid">
                     <div class="certificate-card" *ngFor="let item of certificates">
-                        <img src="{{item.imgurl}}" alt="Certificate" class="certificate-image" data-certificate="1">
+                        <img src="{{item.imgurl}}" loading="lazy" alt="Certificate" class="certificate-image" data-certificate="1">
                         <h4 class="certificate-title">{{item.title}}</h4>
                         <p class="certificate-issuer">{{item.company}}</p>
                         <a href="{{item.link}}" class="certificate-link">
