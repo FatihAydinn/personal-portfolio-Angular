@@ -1,6 +1,5 @@
-import { Component, ViewChild, ViewEncapsulation, OnInit, AfterViewInit, OnDestroy, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { afterNextRender, Component, ViewChild, ViewEncapsulation, OnDestroy, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { GithubapiComponent } from '../githubapi/githubapi.component';
-import { SharedDataService } from '../shared-data.service';
 import { CommonModule } from '@angular/common'; 
 import { isPlatformBrowser } from '@angular/common';
 
@@ -13,7 +12,7 @@ import { isPlatformBrowser } from '@angular/common';
   encapsulation: ViewEncapsulation.None,
   preserveWhitespaces: false
 })
-export class V2Component implements AfterViewInit, OnDestroy, OnInit {
+export class V2Component implements OnDestroy {
   @ViewChild(GithubapiComponent) githubApi!: GithubapiComponent;
   get githubRepos() {
     return this.githubApi?.repositories || [];
@@ -75,21 +74,25 @@ export class V2Component implements AfterViewInit, OnDestroy, OnInit {
   // private mobileSidebar: HTMLElement | null = null;
   // private observer: IntersectionObserver | null = null;
 
-  ngOnInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      setTimeout(() => {
-        this.initAllFunctions();
-      }, 0);
-    }
-  }
+  // ngOnInit() {
+  //   if (isPlatformBrowser(this.platformId)) {
+  //     setTimeout(() => {
+  //       this.initAllFunctions();
+  //     }, 0);
+  //   }
+  // }
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.initAllFunctions();
-    }, 100);    
-  }
+  // ngAfterViewInit() {
+  //   setTimeout(() => {
+  //     this.initAllFunctions();
+  //   }, 100);    
+  // }
 
-constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  afterNextRender(() => {
+    this.initAllFunctions();
+  });
+}
 
   initAllFunctions() {
     if (!isPlatformBrowser(this.platformId)) return;

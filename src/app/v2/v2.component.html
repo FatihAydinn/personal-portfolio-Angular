@@ -124,11 +124,13 @@
             <h2 class="section-title">GitHub Projects</h2>
         </div>
         <div class="projects-grid mb-3">
+          @defer (on timer(0ms)) {
             <app-githubapi style="display: none;"></app-githubapi>
             <div class="project-card" *ngFor="let repo of githubRepos">
                 <h3 class="project-title"><a href="{{repo.clone_url}}" target="_blank">{{repo.name}}</a></h3>
                 <p class="project-description"> {{repo.description}} </p>
             </div>
+          }
         </div>
         <div class="text-center">
             <a href="https://github.com/FatihAydinn?tab=repositories" target="_blank" class="mb-4 mt-2" style="color: #8799fedb; font-family: monospace;">Click for more!</a> 
